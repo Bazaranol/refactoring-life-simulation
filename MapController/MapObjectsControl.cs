@@ -163,7 +163,6 @@ namespace LabOOP1
 
                             case 1:
                                 _listOfAllPlants.Add(new InediblePlant((x, y)));
-                                //_listOfSources.Add(new Wood((x, y)));
                                 break;
                         }
 

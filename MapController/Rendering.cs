@@ -97,38 +97,12 @@ namespace LabOOP1
             }
         }
 
-        //private void DrawSources(MyList<Source> listOfSources)
-        //{
-        //    foreach (Source in listOfSources)
-        //    {
-        //        switch (Source)
-        //        {
-        //            case PlantStage.seed:
-        //                Draw(treeSeed, x, y);
-        //                break;
-        //            case PlantStage.sprout:
-        //                Draw(treeSprout, x, y);
-        //                break;
-        //            case PlantStage.grown:
-        //                if (plant.IsFruiting())
-        //                    Draw(iPlantFruiting, x, y);
-        //                else
-        //                    Draw(iPlant, x, y);
-        //                break;
-        //            case PlantStage.dead:
-        //                Draw(treeDead, x, y);
-        //                break;
-        //        }
-        //    }
-        //}
-
         void DrawSeasonColor()
         {
             seasonColor = (MapObjectsControl.s_currentSeason == Season.summer) ? Color.DarkSeaGreen : Color.Gainsboro;
         }
         void ClearField()
         {
-           //MapObjectsControl.FieldOfAllMapObjects = new List<MapObject>[Form1.s_cols, Form1.s_rows];
             Form1.s_graphics.Clear(seasonColor);
         }
         private void DrawHumans(List<Animal> listOfHumans)
@@ -316,7 +290,6 @@ namespace LabOOP1
         void Draw(Image img, int x, int y)
         {
             Form1.s_graphics.DrawImage(img, x * Form1.s_resolution, y * Form1.s_resolution, new Rectangle(new Point(0, 0), new Size(35, 35)), GraphicsUnit.Pixel);
-            //Form1.s_graphics.DrawImage(img, x * Form1.s_resolution, y * Form1.s_resolution);
         }
     }
 }

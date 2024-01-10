@@ -7,8 +7,6 @@ namespace LabOOP1
     {
         public Fruit((int, int) pos) : base(pos) { }
 
-        //protected override int NutritionalUnit { get;}
-
         public void Die(List<Fruit> list)
         {
             list.Remove(this);

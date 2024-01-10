@@ -51,12 +51,10 @@ namespace LabOOP1
         private void UpdateAge()
         {
             _age++;
-            //if (_age == 10)
             if (_age == 5)
             {
                 Stage = PlantStage.sprout;
             }
-            //if (_age == 20)
             if (_age == 8)
             {
                 Stage = PlantStage.grown;

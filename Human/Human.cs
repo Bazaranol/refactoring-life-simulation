@@ -667,7 +667,6 @@ namespace LabOOP1
             target.Feed();
             target.IsDomesticated = true;
             target.Owner = this;
-            //target.BasisCellPosition = target.GetPosition();
             _domesticatedAnimal[target.GetType()] = target;
         }
 
@@ -854,45 +853,6 @@ namespace LabOOP1
             }
         }
 
-
-        //--------------------------------------------------------< stocks >-----------------------------------------------------------
-
-        //private bool CheckStoksFullness(int count = Constants.MaxCountOfFoodStock)
-        //{
-        //    foreach (var pair in _foodStocks)
-        //    {
-        //        if (CheckStockNotReachedLimit(pair.Key, count))
-        //            return false;
-        //    }
-        //    return true;
-        //}
-        //private bool CheckStockNotReachedLimit(FoodTypes ft, int count = Constants.MaxCountOfFoodStock)
-        //{
-        //    return _foodStocks[ft] < count;
-        //}
-
-        //public bool CheckStocks(FoodTypes food = FoodTypes.any)
-        //{
-        //    if (food == FoodTypes.any)
-        //    {
-        //        foreach (var pair in _foodStocks)
-        //        {
-        //            if (pair.Value != 0)
-        //                return true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return _foodStocks[food] != 0;
-        //    }
-
-        //    return false;
-        //}
-
-        //private KeyValuePair<FoodTypes, int> FindMaxValueAndItsKey()
-        //{
-        //    return _foodStocks.OrderByDescending(z => z.Value).ToDictionary(a => a, s => s).First().Value;
-        //}
 
 
         //--------------------------------------------------------< Die >-----------------------------------------------------------

@@ -51,7 +51,6 @@ namespace LabOOP1
             _currentSatiety = MaxSatiety;
             _currentHealth = MaxHealth;
 
-            //_isAbleToHibernate = random.Next(100) <= 50;
             gender = (Gender)random.Next(0, 2);
 
             SetNutrition();
@@ -328,22 +327,6 @@ namespace LabOOP1
         }
         private void WalkingProcess()
         {
-
-            //if (_isDomesticated && myGoal != PurposeOfMovement.walkNextToOwner)
-            //{
-            //    MoveToTarget(Owner);
-            //    myGoal = PurposeOfMovement.goToOwner;
-
-            //    if (Owner.GetPosition() == currentPosition)
-            //    {
-            //        myGoal = PurposeOfMovement.walkNextToOwner;
-            //    }
-            //}
-            //else if (_isDomesticated && myGoal == PurposeOfMovement.walkNextToOwner)
-            //{
-            //    BasisCellPosition = Owner.GetPosition();
-            //    MoveToRandomCell();
-            //}
 
             if (_isDomesticated)
             {

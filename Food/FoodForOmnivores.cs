@@ -2,7 +2,6 @@
 {
     public abstract class FoodForOmnivorous : MapObject
     {
-        //protected abstract int NutritionalUnit { get;}
         protected abstract string GetInfo();
 
         protected (int, int) currentPosition;
