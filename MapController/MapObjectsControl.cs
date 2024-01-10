@@ -122,77 +122,19 @@ namespace LabOOP1
                     FieldOfAllMapObjects[x, y] = new List<MapObject>();
                     if (random.Next(_densityAnimals) == 0)
                     {
-                        switch (random.Next(9))
-                        {
-                            case 0:
-                                _listOfAnimals.Add(new Rabbit((x, y)));
-                                break;
-                            case 1:
-                                _listOfAnimals.Add(new Horse((x, y)));
-                                break;
-                            case 2:
-                                _listOfAnimals.Add(new Sheep((x, y)));
-                                break;
-                            case 3:
-                                _listOfAnimals.Add(new Tiger((x, y)));
-                                break;
-                            case 4:
-                                _listOfAnimals.Add(new Wolf((x, y)));
-                                break;
-                            case 5:
-                                _listOfAnimals.Add(new Fox((x, y)));
-                                break;
-                            case 6:
-                                _listOfAnimals.Add(new Bear((x, y)));
-                                break;
-                            case 7:
-                                _listOfAnimals.Add(new Pig((x, y)));
-                                break;
-                            case 8:
-                                _listOfAnimals.Add(new Rat((x, y)));
-                                break;
-                        }
+                        CreateFirstAnimals(x, y);
                     }
                     else if (random.Next(_densityPlants) == 0)
                     {
-                        switch (random.Next(0, 2))
-                        {
-                            case 0:
-                                _listOfAllPlants.Add(new EdiblePlant((x, y)));
-                                break;
-
-                            case 1:
-                                _listOfAllPlants.Add(new InediblePlant((x, y)));
-                                break;
-                        }
-
+                        CreateFirstPlants(x, y);
                     }
                     else if (random.Next(_densityHumans) == 0)
                     {
                         _listOfHumans.Add(new Human((x, y)));
-
                     }
                     else if (random.Next(_densitySources) == 0)
                     {
-                        switch (random.Next(4))
-                        {
-                            case 0:
-                                _listOfSources.Add(new GoldSource((x, y)));
-                                break;
-                            case 1:
-                                _listOfSources.Add(new StoneSource((x, y)));
-
-                                break;
-                            case 2:
-                                _listOfSources.Add(new IronSource((x, y)));
-
-                                break;
-                            case 3:
-                                _listOfSources.Add(new WoodSource((x, y)));
-
-                                break;
-
-                        }
+                        CreateFirstResources(x, y);
                     }
                     listOfAnimalsCopy = _listOfAnimals;
                 }
@@ -201,6 +143,78 @@ namespace LabOOP1
             ListOfVillages.Clear();
         }
        
+
+        private void CreateFirstAnimals(int x, int y)
+        {
+            Random random = new();
+            switch (random.Next(9))
+            {
+                case 0:
+                    _listOfAnimals.Add(new Rabbit((x, y)));
+                    break;
+                case 1:
+                    _listOfAnimals.Add(new Horse((x, y)));
+                    break;
+                case 2:
+                    _listOfAnimals.Add(new Sheep((x, y)));
+                    break;
+                case 3:
+                    _listOfAnimals.Add(new Tiger((x, y)));
+                    break;
+                case 4:
+                    _listOfAnimals.Add(new Wolf((x, y)));
+                    break;
+                case 5:
+                    _listOfAnimals.Add(new Fox((x, y)));
+                    break;
+                case 6:
+                    _listOfAnimals.Add(new Bear((x, y)));
+                    break;
+                case 7:
+                    _listOfAnimals.Add(new Pig((x, y)));
+                    break;
+                case 8:
+                    _listOfAnimals.Add(new Rat((x, y)));
+                    break;
+            }
+        }
+
+        private void CreateFirstPlants(int x, int y)
+        {
+            Random random = new();
+            switch (random.Next(0, 2))
+            {
+                case 0:
+                    _listOfAllPlants.Add(new EdiblePlant((x, y)));
+                    break;
+
+                case 1:
+                    _listOfAllPlants.Add(new InediblePlant((x, y)));
+                    break;
+            }
+        }
+
+        private void CreateFirstResources(int x, int y)
+        {
+            Random random = new();
+            switch (random.Next(4))
+            {
+                case 0:
+                    _listOfSources.Add(new GoldSource((x, y)));
+                    break;
+                case 1:
+                    _listOfSources.Add(new StoneSource((x, y)));
+                    break;
+                case 2:
+                    _listOfSources.Add(new IronSource((x, y)));
+                    break;
+                case 3:
+                    _listOfSources.Add(new WoodSource((x, y)));
+                    break;
+
+            }
+        }
+
         private static void ChangeIndex(int replaceableIndex, int newIndex)
         {
             foreach (MapObject mapObj in ListOfVillages[replaceableIndex])
