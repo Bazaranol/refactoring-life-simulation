@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 
@@ -132,27 +133,27 @@ namespace LabOOP1
             if (distx < 0)
             {
                 if (disty > 0)
-                    newPosAn = (x + Math.Min(3, Math.Abs(distx)), y - Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x + CalcMinDistance(distx), y - CalcMinDistance(disty));
                 else if (disty < 0)
-                    newPosAn = (x + Math.Min(3, Math.Abs(distx)), y + Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x + CalcMinDistance(distx), y + CalcMinDistance(disty));
                 else
-                    newPosAn = (x + Math.Min(3, Math.Abs(distx)), y);
+                    newPosAn = (x + CalcMinDistance(distx), y);
             }
             else if (distx > 0)
             {
                 if (disty > 0)
-                    newPosAn = (x - Math.Min(3, Math.Abs(distx)), y - Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x - CalcMinDistance(distx), y - CalcMinDistance(disty));
                 else if (disty < 0)
-                    newPosAn = (x - Math.Min(3, Math.Abs(distx)), y + Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x - CalcMinDistance(distx), y + CalcMinDistance(disty));
                 else
-                    newPosAn = (x - Math.Min(3, Math.Abs(distx)), y);
+                    newPosAn = (x - CalcMinDistance(distx), y);
             }
             else
             {
                 if (disty > 0)
-                    newPosAn = (x, y - Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x, y - CalcMinDistance(disty));
                 else if (disty < 0)
-                    newPosAn = (x, y + Math.Min(3, Math.Abs(disty)));
+                    newPosAn = (x, y + CalcMinDistance(disty));
             }
 
 
@@ -160,8 +161,12 @@ namespace LabOOP1
         }
 
 
-
         //-------------------------------------------вспомогательные функции-------------------------------------------
+
+        private int CalcMinDistance(int distance)
+        {
+            return Math.Min(3, Math.Abs(distance));
+        }
 
         //поиск новой клетки в пределах поля
         public (int, int) GetClosestCell((int, int) position)
